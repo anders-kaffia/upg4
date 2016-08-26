@@ -70,6 +70,11 @@ var PollApp = React.createClass({
                 }
             });
         })
+        .on( 'newQuestion', ( questions ) => {
+            this.setState({
+                questions: questions
+            })
+        })
         .on( 'results', ( results ) => {
             this.setState({
                 results: results

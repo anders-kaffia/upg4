@@ -12,7 +12,7 @@ var Speaker = React.createClass({
         return (
         	<Display if={ this.props.status === 'connected' }>
         		<Display if={ this.props.member.type === 'speaker' }>
-        			<NewQuestion askNewQuestion={ this.props.createQuestion } />
+        			<NewQuestion emit={ this.props.emit } />
         			<QuestionList questions={ this.props.questions } emit={ this.props.emit } />
         			<AudienceList audience={ this.props.audience } />
 	        	</Display>

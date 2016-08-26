@@ -31,12 +31,7 @@ var JoinSpeakerForm = React.createClass({
         
         sessionStorage.title = title;
         
-        this.props.emit('start', {
-            speaker: {
-                name:name
-            },
-            title: title
-        });
+        this.props.emit('start', { speaker: { name:name }, title: title });
     }
 })
 module.exports = JoinSpeakerForm;

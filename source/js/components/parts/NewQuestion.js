@@ -12,6 +12,7 @@ var NewQuestion = React.createClass({
 		}
 		console.log(newQ);
 		// Reset the form after submission
+		this.props.emit( 'newQuestion', newQ );
 		this.refs.newQForm.reset();
 	},
 	render: function() {

@@ -26,7 +26,7 @@ var results = {
 };
 
 function updateJsonFile() {
-    var text = `module.exports=${JSON-stringify(questions, null, " ")}`;
+    var text = `module.exports=${JSON.stringify(questions, null, " ")}`;
     fs.writeFile( './server/questions.js', text, (err) => {
         if ( err ) {
             console.log(err);
@@ -35,7 +35,6 @@ function updateJsonFile() {
         }
     })
 }
-updateJsonFile();
 
 io.sockets.on('connection', function (socket) {
 
@@ -88,6 +87,12 @@ io.sockets.on('connection', function (socket) {
         };
         console.log(question.q);
         io.sockets.emit('ask', question);
+    })
+    .on( 'newQuestion', ( question ) => {
+        console.log('ny fråga');
+        questions.push(question);
+        io.sockets.emit( 'newQuestion', questions );
+        updateJsonFile();
     })
     .on( 'answer', ( optionName ) => {
         results[optionName] +=1;
