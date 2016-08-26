@@ -1,0 +1,27 @@
+UPPGIFT:
+Kunna lägga till fler frågor från speakersidan. Det räcker med att uppdatera variabeln.
+
+Lägga till ett nytt formulär där man kan skriva in en fråga och 4 svarsalternativ. Detta skall sedan pushas ut till alla.
+
+Tänk som att lägga till Audience.
+
+Kolla på sista kapitlet i Lynda-kursen. Mer info om ES6.
+
+----------------------------------------------------
+REACT
+
+STATE:
+	ett objekt som React reagerar på ändringar på, och uppdaterar alla instanser av state-objektet.
+	Element på HTML-sidan kan baseras på state-objektet. Dessa uppdateras automatiskt av React vid ändring av state-objekt.
+
+state:
+	{
+	title: "hej"
+	}
+
+<h1>{this.state.title}</h1>
+
+Ändras 'title' kommer h1 uppdateras automatiskt. 
+Vidarebefodrade funktioner anropas med props.
+Props används för att skicka ner funktioner för att skicka tillbaka data. 
+
